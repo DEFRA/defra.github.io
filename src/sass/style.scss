@@ -29,7 +29,9 @@ $border-grey: darken( $base-grey-medium, 15% );
 $dark-grey: #3B3B3B;
 $app-light-grey: #f8f8f8;
 
-
+body {
+  margin: 0;
+}
 
 .defra-body {
   background-color: $base-grey-light;
