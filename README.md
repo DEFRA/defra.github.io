@@ -11,6 +11,10 @@ Design, Software Development, Test and Analytics standards for Defra.
 
 **`npm run build`**
 
+> Deploy
+
+git subtree push --prefix public origin gh-pages`**
+
 
 
 
