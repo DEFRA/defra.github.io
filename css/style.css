@@ -5679,6 +5679,10 @@ x:-moz-any-link {
   }
 }
 
+body {
+  margin: 0;
+}
+
 .defra-body {
   background-color: #f3f2f1;
   font-size: 18px;
