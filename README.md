@@ -13,7 +13,7 @@ Design, Software Development, Test and Analytics standards for Defra.
 
 > Deploy
 
-git subtree push --prefix public origin gh-pages`**
+**`git subtree push --prefix public origin gh-pages`**
 
 
 
