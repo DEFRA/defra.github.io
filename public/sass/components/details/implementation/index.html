@@ -1,0 +1,32 @@
+<h2 id="implementation-notes">Implementation notes<a class="tdbc-anchor" href="#implementation-notes">#</a></h2>
+<h3 id="marker-styling">Marker styling<a class="tdbc-anchor" href="#marker-styling">#</a></h3>
+<p>Firefox uses display: list-item to show the arrow marker for the summary
+element.</p>
+<p>Unfortunately we want to use <code>display: inline-block</code> to 'shrink-wrap' the focus
+outline around the summary text, which means that the arrow no longer shows up.</p>
+<p>Previously in GOV.UK Elements we resolved this by targeting Firefox specifically
+and reverting to <code>display: list-item</code>:</p>
+<pre><code>@-moz-document regexp('.*') {
+  details summary:not([tabindex]) {
+    // Allow duplicate properties, override the summary display property
+    // scss-lint:disable DuplicateProperty
+    display: list-item;
+    display: revert;
+  }
+}
+</code></pre>
+<p>However, <code>@-moz-document</code> has been removed in Firefox nightly as of 29th Nov
+2017 so with this in mind we have taken a different approach, hiding the
+browser's marker and injecting and styling our own one across all browsers
+instead.</p>
+<p>This also gives us more control over the styling of the marker, allowing us for
+example to align the summary and disclosed text correctly across all browsers.</p>
+<p>The downside of this approach is that older browsers that require a polyfill for
+the details element will display the marker even when Javascript is disabled.
+Whilst this is not perfect, it is a cosmetic issue and the user will still be
+able to access the disclosed content.</p>
+<p>For the arrows themselves, we originally tried using unicode glyphs –
+specifically \25B6 (Black right-pointing triangle) and 25BC (Black down-pointing
+triangle) but Android insists on substituting the the former for an emoji even
+when the \00FE0E modifier is applied. Sad face.</p>
+<p>Hence the border-based triangles we are using today.</p>
