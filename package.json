@@ -6,8 +6,9 @@
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass-site": "sass  --no-source-map src/sass/style.scss public/css/style.css",
-    "build:sass": "npm-run-all --parallel build:sass-site",
+    "build:sass-site": "sass  --no-source-map src/sass/style.scss public/css/style.css ",
+    "build:sass-gov": "sass  --no-source-map node_modules/govuk-frontend/govuk/all.scss public/css/gov.css ",
+    "build:sass": "npm-run-all --parallel build:sass-site build:sass-gov",
     "build:eleventy": "eleventy",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",

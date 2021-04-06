@@ -1,3 +1,7 @@
+/*
+  Layout - Footer
+  ----------------------------------- */
+
 .footer-container {
   border-top: 1px $border-grey solid;
   background-color: $base-grey-light;
@@ -9,13 +13,11 @@
     max-width: 960px;
     margin: 0 auto;
     justify-content: space-between;
-    font-size: 14px;
     display: flex;
     align-items: center;
 
-    p.footer-message {
-        margin-bottom: 0;
-        font-size: 14px;
+    .defra-footer-text {
+      margin-bottom: 0;
     }
 
     .footer-menu {
@@ -30,7 +32,6 @@
       li {
         padding-left: 1.5em;
         list-style: none;
-            font-size: 14px;
       }
 
       li a {
@@ -69,14 +70,10 @@
 }
 
 
-
-
-
 .wrapper-footer__system {
   padding: 30px 0;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
   align-items: center;
   max-width: 1050px;
 
@@ -84,7 +81,7 @@
 
     p {
       margin-bottom: 0;
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 
@@ -104,6 +101,7 @@
 
     li a {
       color: #3B3B3B;
+      font-size: 16px;
     }
 
     li:first-child {
@@ -130,13 +128,6 @@
 
   .wrapper-footer__system {
     font-size: 13px;
-
-    .footer-message {
-
-      p {
-        font-size: 13px;
-      }
-    }
 
     .footer-menu {
       margin-top: 8px;
